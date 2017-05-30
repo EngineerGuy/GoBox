@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"package_manager\system_stm32f1xx.o"
+"package_manager\stm32f1xx_hal_gpio.o"
+"package_manager\stm32f1xx_hal_tim_ex.o"
+"package_manager\stm32f1xx_hal_rcc_ex.o"
+"package_manager\stm32f1xx_hal_flash.o"
+"package_manager\stm32f1xx_hal.o"
+"package_manager\stm32f1xx_hal_rcc.o"
+"package_manager\stm32f1xx_hal_gpio_ex.o"
+"package_manager\stm32f1xx_hal_dma.o"
+"package_manager\stm32f1xx_hal_cortex.o"
+"package_manager\stm32f1xx_hal_flash_ex.o"
+"package_manager\stm32f1xx_hal_pwr.o"
+"package_manager\stm32f1xx_hal_tim.o"
+"package_manager\stm32f1xx_it.o"
+"package_manager\main.o"
+"package_manager\stm32f1xx_hal_msp.o"
+"package_manager\drv_command.o"
+"package_manager\drv_lock.o"
+"package_manager\startup_stm32f101xe.o"
+--library_type=microlib --strict --scatter "Package_manager\Package_manager.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Package_manager.map" -o Package_manager\Package_manager.axf

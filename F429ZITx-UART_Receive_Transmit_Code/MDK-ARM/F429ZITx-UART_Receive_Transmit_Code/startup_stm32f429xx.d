@@ -1,0 +1,1 @@
+f429zitx-uart_receive_transmit_code\startup_stm32f429xx.o: startup_stm32f429xx.s

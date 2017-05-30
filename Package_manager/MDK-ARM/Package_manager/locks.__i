@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -D__EVAL -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include --C99
+-I "C:\disk B\projects\STM32\Force\Package_manager\MDK-ARM\RTE"
+-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include
+-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
+-D__UVISION_VERSION="520" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F101xE
+-o package_manager\locks.o --omf_browse package_manager\locks.crf --depend package_manager\locks.d "locks.c"

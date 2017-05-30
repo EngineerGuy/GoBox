@@ -1,0 +1,27 @@
+--cpu Cortex-M4.fp
+"f429zitx-uart_receive_transmit_code\stm32f4xx_it.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_msp.o"
+"f429zitx-uart_receive_transmit_code\main.o"
+"f429zitx-uart_receive_transmit_code\drv_command.o"
+"f429zitx-uart_receive_transmit_code\drv_lock.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_tim_ex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_flash.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_dma_ex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_rcc_ex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_pwr.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_flash_ex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_tim.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_gpio.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_dma.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_pwr_ex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_flash_ramfunc.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_cortex.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_uart.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal.o"
+"f429zitx-uart_receive_transmit_code\stm32f4xx_hal_rcc.o"
+"f429zitx-uart_receive_transmit_code\startup_stm32f429xx.o"
+"f429zitx-uart_receive_transmit_code\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "F429ZITx-UART_Receive_Transmit_Code\F429ZITx-UART_Receive_Transmit_Code.sct"
+--diag_suppress=L6329 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "F429ZITx-UART_Receive_Transmit_Code.map" -o F429ZITx-UART_Receive_Transmit_Code\F429ZITx-UART_Receive_Transmit_Code.axf
