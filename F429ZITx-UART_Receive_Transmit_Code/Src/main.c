@@ -36,7 +36,7 @@
 #include "stdbool.h"
 
 /* USER CODE BEGIN Includes */
-#define UART_BUF_SIZE				40 // Main receive buffer size 
+#define UART_BUF_SIZE				12 // Main receive buffer size 
 #define CMD_SIZE 						6
 
 
@@ -104,7 +104,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	HAL_TIM_Base_Start_IT(&htim14);
-	HAL_UART_Receive_DMA(&huart1, &main_uart1_buf_byte, 1);        
+	HAL_UART_Receive_DMA(&huart1, main_uart1_buf, sizeof(main_uart1_buf));        
 
   /* USER CODE END 2 */
 

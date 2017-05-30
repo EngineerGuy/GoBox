@@ -33,3 +33,4 @@ f429zitx-uart_receive_transmit_code\stm32f4xx_it.o: ../Drivers/STM32F4xx_HAL_Dri
 f429zitx-uart_receive_transmit_code\stm32f4xx_it.o: ../Inc/stm32f4xx_it.h
 f429zitx-uart_receive_transmit_code\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
 f429zitx-uart_receive_transmit_code\stm32f4xx_it.o: ..\..\Package_manager\MDK-ARM\drv_command.h
+f429zitx-uart_receive_transmit_code\stm32f4xx_it.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

@@ -44,7 +44,8 @@ typedef struct received_command
 }rec_cmd;
 
 
-void cmd_Parser(uint8_t *str, uint8_t *start_byte_pos, uint8_t *stop_byte_pos, struct received_command cmd); // Command parser function 
+//void cmd_Parser(uint8_t *str, uint8_t *start_byte_pos, uint8_t *stop_byte_pos, struct received_command cmd); // Command parser function 
+void cmd_Parser(uint8_t *str, struct received_command cmd);
 
 
 #endif

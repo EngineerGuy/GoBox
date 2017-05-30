@@ -36,18 +36,20 @@
 #include "stm32f4xx_it.h"
 #include "stdbool.h"
 #include "drv_command.h"
+#include "string.h"
 
 /* USER CODE BEGIN 0 */
-#define UART_BUF_SIZE				40 // Main receive buffer size 
+#define UART_BUF_SIZE				12 // Main receive buffer size 
 #define CMD_SIZE 						6
 
 uint8_t str[CMD_SIZE]={0};
-uint8_t main_uart1_buf[UART_BUF_SIZE];
+uint8_t main_uart1_buf[UART_BUF_SIZE] = {0};
 uint8_t *uart_array = main_uart1_buf; 				// pointer to main buffer
 uint8_t main_uart1_buf_byte = 0;
 uint8_t	main_uart1_buf_pos = 0;
 uint8_t	main_uart1_buf_proc = 0;
 uint8_t received_chars = 0;
+uint8_t *pointer_count = &received_chars;
 
 uint8_t *start_b_pos = &main_uart1_buf_proc;
 uint8_t *stop_b_pos = &main_uart1_buf_pos;
@@ -130,9 +132,8 @@ void DMA2_Stream2_IRQHandler(void)
   /* USER CODE END DMA2_Stream2_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_usart1_rx);
   /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
-	
-//	cmd_Parser(uart_array, main_uart1_buf_pos, main_uart1_buf_proc, command);
-//	is_Receiving = 0;
+	cmd_Parser(uart_array, command);
+	memset(&main_uart1_buf[0], 0, sizeof(main_uart1_buf));
   /* USER CODE END DMA2_Stream2_IRQn 1 */
 }
 
@@ -153,16 +154,22 @@ void DMA2_Stream7_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 { 
-	if(huart != &huart1) return;
-	__HAL_UART_FLUSH_DRREGISTER(huart); // Clear the buffer to prevent overrun
-	is_Receiving = 1;
-	received_chars++;
-	main_uart1_buf[main_uart1_buf_pos++] = main_uart1_buf_byte;
-	if(main_uart1_buf_pos >= UART_BUF_SIZE) main_uart1_buf_pos = 0;
-	if(received_chars >= CMD_SIZE)
-	{
-		cmd_Parser(uart_array, start_b_pos, stop_b_pos, command);
-	}
+//	if(huart != &huart1) return;
+//	__HAL_UART_FLUSH_DRREGISTER(huart); // Clear the buffer to prevent overrun
+//	is_Receiving = 1;
+//	received_chars++;
+//	main_uart1_buf[main_uart1_buf_pos++] = main_uart1_buf_byte;
+//	
+//	if(main_uart1_buf_pos >= UART_BUF_SIZE) main_uart1_buf_pos = 0;
+//	
+//	if(received_chars >= CMD_SIZE)
+//	{
+//		HAL_UART_Transmit_DMA(&huart1, pointer_count, sizeof(received_chars));
+//		cmd_Parser(uart_array, start_b_pos, stop_b_pos, command);
+//		received_chars = 0;
+//		HAL_UART_Transmit_DMA(&huart1, pointer_count, sizeof(received_chars));
+//	}
+	
 //  if(huart1.RxXferSize == 1)   
 //  {
 //      HAL_UART_Receive_DMA(&huart1, (uint8_t *)str, 1); 
