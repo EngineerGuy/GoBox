@@ -55,7 +55,9 @@ uint8_t *start_b_pos = &main_uart1_buf_proc;
 uint8_t *stop_b_pos = &main_uart1_buf_pos;
 
 
-volatile bool is_Receiving = 0;
+
+volatile bool is_Received = 0;
+volatile bool is_Parsed = 0;
 
 rec_cmd command;
 /* USER CODE END 0 */
@@ -132,7 +134,8 @@ void DMA2_Stream2_IRQHandler(void)
   /* USER CODE END DMA2_Stream2_IRQn 0 */
   HAL_DMA_IRQHandler(&hdma_usart1_rx);
   /* USER CODE BEGIN DMA2_Stream2_IRQn 1 */
-	cmd_Parser(uart_array, command);
+	
+	cmd_Parser(uart_array, command, is_Parsed);
 	memset(&main_uart1_buf[0], 0, sizeof(main_uart1_buf));
   /* USER CODE END DMA2_Stream2_IRQn 1 */
 }

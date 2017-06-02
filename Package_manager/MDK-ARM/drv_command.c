@@ -9,8 +9,6 @@ Comments: This file contains the description and declaration of structures and m
 
 #define UART_BUF_SIZE				12 // Main receive buffer size 
 
-extern volatile bool is_Receiving;
-
 
 void decode_Received_Cmd()
 {
@@ -22,9 +20,12 @@ void decode_Received_Cmd()
 Fucntion for parsing the received command via UART
 */
 //void cmd_Parser(uint8_t *str, uint8_t *start_byte_pos, uint8_t *stop_byte_pos, struct received_command cmd)
-void cmd_Parser(uint8_t *str, struct received_command cmd)
+void cmd_Parser(uint8_t *str, struct received_command cmd, bool parsed)
 {		
 	while(*str == 0) *str++;	
+	
+	// add length check
+	
 	cmd.cmd = *str++;
 	cmd.len = *str++;
 	uint8_t j=0;
@@ -33,6 +34,8 @@ void cmd_Parser(uint8_t *str, struct received_command cmd)
 		cmd.payload[j]=*str++;
 		j++;
 	}
+	
+	parsed = true;
 	
 	if(*str++ != 0)
 	{

@@ -1,3 +1,12 @@
 package_manager\drv_lock.o: drv_lock.c
 package_manager\drv_lock.o: drv_lock.h
 package_manager\drv_lock.o: drv_command.h
+package_manager\drv_lock.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+package_manager\drv_lock.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f101xe.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Include/core_cm3.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Include/core_cmInstr.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Include/core_cmFunc.h
+package_manager\drv_lock.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+package_manager\drv_lock.o: drv_command.h

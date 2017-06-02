@@ -12,6 +12,7 @@
 "package_manager\stm32f1xx_hal_flash_ex.o"
 "package_manager\stm32f1xx_hal_pwr.o"
 "package_manager\stm32f1xx_hal_tim.o"
+"package_manager\stm32f1xx_hal_uart.o"
 "package_manager\stm32f1xx_it.o"
 "package_manager\main.o"
 "package_manager\stm32f1xx_hal_msp.o"

@@ -34,6 +34,7 @@
 #include "main.h"
 #include "stm32f4xx_hal.h"
 #include "stdbool.h"
+#include "drv_command.h"
 
 /* USER CODE BEGIN Includes */
 #define UART_BUF_SIZE				12 // Main receive buffer size 
@@ -55,9 +56,15 @@ DMA_HandleTypeDef hdma_usart1_tx;
 extern uint8_t main_uart1_buf_byte;
 extern uint8_t	main_uart1_buf_pos;
 extern uint8_t	main_uart1_buf_proc;
-extern volatile bool is_Receiving;
+
+
+extern volatile bool is_Received;
+extern volatile bool is_Parsed;
+
 extern uint8_t main_uart1_buf[UART_BUF_SIZE];
 extern uint8_t str[CMD_SIZE];
+extern rec_cmd command;
+
 
 /* USER CODE END PV */
 
@@ -115,7 +122,14 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-
+	if(is_Received && is_Parsed)
+	{
+		if(command.payload[0] == 1) // Check if correct module
+		{
+			
+		}
+		is_Received = false;
+	}
 		
 		
   }

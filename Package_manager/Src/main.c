@@ -38,6 +38,11 @@
 #include "drv_command.h"
 #include "drv_lock.h"
 
+#define LOCKS_NUM										12 				//Number of locks on each PCB
+struct locks locks_array[LOCKS_NUM];
+
+
+
 /* USER CODE END Includes */
 
 /* Private variables ---------------------------------------------------------*/
@@ -93,10 +98,15 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
 	HAL_TIM_Base_Start_IT(&htim7);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);
-	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_15, GPIO_PIN_RESET);
 
 	
+	locksInit(locks_array);
+	
+	HAL_GPIO_WritePin(locks_array[0].port[0], locks_array[0].pin[0], GPIO_PIN_SET);
+	HAL_GPIO_WritePin(locks_array[0].port[1], locks_array[0].pin[1], GPIO_PIN_RESET);
+	
+//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, GPIO_PIN_SET);
+//	HAL_GPIO_WritePin(GPIOC, GPIO_PIN_15, GPIO_PIN_RESET);
   /* USER CODE END 2 */
 
   /* Infinite loop */
